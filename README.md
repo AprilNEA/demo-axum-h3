@@ -16,14 +16,6 @@ cargo run
 curl "http://localhost:3000"
 ```
 
-### Testing HTTP/2
-```bash
-curl --http2 "http://localhost:4433"
-# Only use HTTP/2, fail if the server does not support it
-curl --http2-prior-knowledge http://localhost:4433
-```
-
-
 ### Testing HTTP/3
 ```bash
 curl --http3-only -k "https://localhost:4433"
@@ -40,6 +32,7 @@ curl --http3-only -k "https://localhost:4433"
 > 
 > Credit: [Installing curl with http3 on MacOS](https://gist.github.com/xmlking/cff9510dac9281d29390392cbbb033a8)
 
+![result](./result.png)
 
 ## HTTP/3 Implementation Notes
 
