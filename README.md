@@ -1,6 +1,6 @@
 # Demo Axum HTTP/3 Server
 
-This project demonstrates an Axum-based HTTP/1.1 API server with plans for HTTP/3 support.
+This project demonstrates an Axum-based API server with HTTP/3 support.
 
 ## Running the Server
 
@@ -37,8 +37,8 @@ curl --http3-only -k "https://localhost:4433"
 > echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.zshrc
 > source ~/.zshrc
 > ```
-
-(Installing curl with http3 on MacOS)[https://gist.github.com/xmlking/cff9510dac9281d29390392cbbb033a8]
+> 
+> Credit: [Installing curl with http3 on MacOS](https://gist.github.com/xmlking/cff9510dac9281d29390392cbbb033a8)
 
 
 ## HTTP/3 Implementation Notes
