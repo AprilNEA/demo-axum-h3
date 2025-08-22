@@ -57,3 +57,7 @@ The current implementation focuses on a working HTTP/1.1 Axum server as the foun
 - `tower` & `tower-http` - Middleware layers
 - `serde` & `serde_json` - JSON serialization
 - `tracing` - Structured logging
+
+
+---
+[![](https://hits.aprilnea.com/hits?url=https://github.com/aprilnea/demo-axum-h3)](https://hits.aprilnea.com)
