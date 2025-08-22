@@ -2,53 +2,44 @@
 
 This project demonstrates an Axum-based HTTP/1.1 API server with plans for HTTP/3 support.
 
-## Current Features
-
-- Axum HTTP/1.1 server on port 3000
-- JSON API endpoints:
-  - `GET /` - Hello endpoint with optional `name` query parameter
-  - `GET /health` - Health check endpoint
-- CORS support
-- Structured logging with tracing
-
-## API Endpoints
-
-### Hello Endpoint
-```bash
-curl "http://localhost:3000"
-curl "http://localhost:3000?name=World"
-```
-
-Response:
-```json
-{
-  "message": "Hello, World!"
-}
-```
-
-### Health Check
-```bash
-curl "http://localhost:3000/health"
-```
-
-Response:
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0"
-}
-```
-
 ## Running the Server
 
 ```bash
 cargo run
 ```
 
-The server will start and display:
-- HTTP/1.1 server listening on 127.0.0.1:3000
-- Visit http://localhost:3000 or http://localhost:3000?name=YourName
-- Health check: http://localhost:3000/health
+## Current Features
+- Axum HTTP/1.1 and HTTP/3 server on port 4433
+
+### Testing HTTP/1.1
+```bash
+curl "http://localhost:3000"
+```
+
+### Testing HTTP/2
+```bash
+curl --http2 "http://localhost:4433"
+# Only use HTTP/2, fail if the server does not support it
+curl --http2-prior-knowledge http://localhost:4433
+```
+
+
+### Testing HTTP/3
+```bash
+curl --http3-only -k "https://localhost:4433"
+```
+
+> Make sure to install `curl` with HTTP/3 support:
+>
+> ```bash
+> brew remove -f curl
+> brew install cloudflare/homebrew-cloudflare/curl
+> echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.zshrc
+> source ~/.zshrc
+> ```
+
+(Installing curl with http3 on MacOS)[https://gist.github.com/xmlking/cff9510dac9281d29390392cbbb033a8]
+
 
 ## HTTP/3 Implementation Notes
 

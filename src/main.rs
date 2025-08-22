@@ -47,7 +47,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/health", get(health_handler))
         .layer(CorsLayer::permissive());
 
-    let http_addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    let http_addr = SocketAddr::from(([127, 0, 0, 1], 4433));
     let h3_addr = SocketAddr::from(([127, 0, 0, 1], 4433));
 
     info!("Starting dual-protocol server:");
